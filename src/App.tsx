@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="system" storageKey="teste-front-end-befly">
+    <ThemeProvider defaultTheme="system" storageKey="teste-front-end">
       <RouterProvider router={router} />
     </ThemeProvider>
   );

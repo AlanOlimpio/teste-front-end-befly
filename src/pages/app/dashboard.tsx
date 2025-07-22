@@ -5,8 +5,8 @@ export function Dashboard() {
     <>
       <h1>Dashboard</h1>
       <Button
-        className="bg-primary text-primary-foreground hover:bg-primary/90"
-        variant="outline"
+        className="justify-center bg-primary text-gray-900 shadow-xs hover:bg-primary/90 cursor-pointer"
+        variant="default"
       >
         Button
       </Button>
