@@ -1,11 +1,14 @@
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { Outlet } from "react-router-dom";
+import { AppSidebar } from "@/components/app-sidebar"
 export function AppLayout() {
   return (
-    <div>
-      <h1>Cabeçalho</h1>
-      <div>
+    <SidebarProvider>
+      <AppSidebar />
+      <main className="flex flex-1 flex-col gap-4 p-8 pt-6 max-sm:pt-8 max-sm:p-5">
+        <SidebarTrigger />
         <Outlet />
-      </div>
-    </div>
+      </main>
+    </SidebarProvider>
   );
 }
