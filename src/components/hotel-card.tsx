@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button"
 
 import { MapPin } from "lucide-react";
 import { Badge } from "./ui/badge";
+import { StarRating } from "./star-rating";
 
 export function HotelCard() {
-
   return (
     <Card className="w-full max-w-lg bg-transparent">
       <CardHeader className="flex flex-row items-start justify-between max-sm:px-4">
@@ -19,6 +19,7 @@ export function HotelCard() {
             <Badge variant="secondary" className="self-start">
               Turquia
             </Badge>
+            <StarRating rating={1} size={25} />
           </CardDescription>
         </div>
       </CardHeader>
