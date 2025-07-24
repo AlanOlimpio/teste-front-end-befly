@@ -27,14 +27,14 @@ export function AppSidebar() {
   const { pathname } = useLocation();
   return (
     <Sidebar collapsible="icon">
-      <SidebarContent>
+      <SidebarContent className="bg-background">
         <SidebarGroup>
           <div className="flex justify-end items-center">
-            {isMobile && (<Button variant="secondary" size="icon" className="size-8" onClick={() => { setOpenMobile(false) }}>
+            {isMobile && (<Button variant="outline" size="icon" className="size-8" onClick={() => { setOpenMobile(false) }}>
               <X />
             </Button>)}
           </div>
-          <SidebarGroupLabel className="text-1xl/9 font-bold mb-2">Hotéis</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-1xl/9 font-bold mb-2 text-foreground">Hotéis</SidebarGroupLabel>
 
           <SidebarGroupContent>
 
@@ -45,8 +45,9 @@ export function AppSidebar() {
                     asChild
                     onClick={() => { setOpenMobile(false) }}
                     isActive={pathname === item.url}
+                    variant="outline"
                   >
-                    <Link to={item.url}>
+                    <Link to={item.url} >
                       <item.icon />
                       <span>{item.title}</span>
                     </Link>
