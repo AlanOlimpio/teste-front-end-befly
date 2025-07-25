@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 export const StarRating = ({ rating, max = 5, size = 20, className = "" }: StarRating) => {
     const { theme } = useTheme();
     return (
-        <div className={`flex gap-1 ${className}`}>
+        <div className={`flex gap-1 flex-wrap ${className}`}>
             {Array.from({ length: max }).map((_, i) => {
 
                 const bgFill = i < rating ? '#FFFF00' : 'transparent';
