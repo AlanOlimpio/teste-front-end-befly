@@ -107,7 +107,7 @@ export function HotelsListFilters() {
                 className="h-8 w-auto grow"
                 {...register("rating")}
             />
-            <Button variant="secondary" size="sm" type="submit" className="grow">
+            <Button variant="secondary" size="sm" type="submit" className="grow cursor-pointer">
                 <Search className="mr-2 h-4 w-4" />
                 Filtrar resultados
             </Button>
@@ -116,7 +116,7 @@ export function HotelsListFilters() {
                 variant="secondary"
                 size="sm"
                 type="button"
-                className="grow"
+                className="grow cursor-pointer"
             >
                 <X className="mr-2 h-4 w-4" />
                 Remover filtros

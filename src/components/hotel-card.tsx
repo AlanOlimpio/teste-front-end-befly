@@ -11,9 +11,10 @@ interface HotelCard {
   hotel: {
     place_id: string;
     nome_hotel_auxiliar: string;
-    endereco_logradouro_auxiliar: string;
+    municipio_fornecedor_auxiliar: string;
     pais_fornecedor_auxiliar: string;
     Estrelas: string;
+    rating: string;
   };
 }
 
@@ -30,16 +31,31 @@ export function HotelCard({ hotel }: HotelCard) {
         <div className="space-y-1.5">
           <CardTitle>{hotel.nome_hotel_auxiliar}</CardTitle>
           <CardDescription className="grid gap-2">
+            <div className="flex gap-2"> <span className="max-w-full text-left ">
+              País:
+            </span>
+              <Badge variant="secondary" className="self-start">
+                {hotel.pais_fornecedor_auxiliar}
+              </Badge>
+            </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              <span className="max-w-full text-left">
-                {hotel.endereco_logradouro_auxiliar}
-              </span>
+              <Badge variant="secondary" className="self-start">
+                {hotel.municipio_fornecedor_auxiliar}
+              </Badge>
             </div>
-            <Badge variant="secondary" className="self-start">
-              {hotel.pais_fornecedor_auxiliar}
-            </Badge>
+            <span className="max-w-full text-left">
+              Avaliações:  <Badge variant="secondary" className="self-start">
+                {hotel.rating}
+              </Badge>
+            </span>
+
+
+            <span className="max-w-full text-left font-bold">
+              Número de estrelas do hotel:
+            </span>
             <StarRating rating={parseInt(hotel.Estrelas)} size={25} />
+
           </CardDescription>
         </div>
       </CardHeader>
