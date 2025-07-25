@@ -4,14 +4,32 @@ import { Pagination } from "@/components/pagination";
 import { HotelCard } from "./hotel-card";
 import { getHotels } from "@/api/get-hotels";
 import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "react-router-dom";
+import { z } from "zod";
 
 export function ListHotels() {
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const pageIndex = z.coerce
+        .number()
+        .transform((page) => page - 1)
+        .parse(searchParams.get("page") ?? "1");
+
 
     const { data: result } = useQuery({
-        queryKey: ["ListHotels"],
-        queryFn: getHotels,
+        queryKey: ["ListHotels", pageIndex],
+        queryFn: () => getHotels({
+            offset: pageIndex.toString()
+        }),
     });
 
+
+    function handlePaginate(pageIndex: number) {
+        setSearchParams((state) => {
+            state.set("page", (pageIndex + 1).toString());
+            return state;
+        });
+    }
     return (
         <>
             <div className="px-8 max-sm:px-5">
@@ -28,6 +46,7 @@ export function ListHotels() {
                 </div>
 
             </div>
-            <Pagination pageIndex={0} totalCount={105} perPage={10} /></>
+            {result && (<Pagination onPageChange={handlePaginate} pageIndex={result.pagination.offset} totalCount={result.pagination.total} perPage={result.pagination.limit} />)}
+        </>
     );
 }

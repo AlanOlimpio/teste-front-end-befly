@@ -25,7 +25,7 @@ export function HotelCard({ hotel }: HotelCard) {
     navigate(`/hotel/${place_id}`);
   }
   return (
-    <Card className="w-full max-w-lg bg-transparent justify-between">
+    <Card className="w-full bg-transparent justify-between">
       <CardHeader className="flex flex-row items-start justify-between max-sm:px-4">
         <div className="space-y-1.5">
           <CardTitle>{hotel.nome_hotel_auxiliar}</CardTitle>

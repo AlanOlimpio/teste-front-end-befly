@@ -20,7 +20,7 @@ type GetHotelsResponse = {
   }[];
   pagination: {
     total: number;
-    limil: number;
+    limit: number;
     offset:number;
     hasMore: boolean;
   };
@@ -31,3 +31,7 @@ type StarRating = {
     size?: number;
     className?: string;
 };
+
+type GetHotelsQuery = {
+  offset?: string | null;
+}
