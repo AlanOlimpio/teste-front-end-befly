@@ -11,7 +11,7 @@ type GetHotelsResponse = {
     cep_fornecedor_auxiliar: string;
     latitude_fornecedor_auxiliar: string;
     longitude_fornecedor_auxiliar: string;
-    cadeia_auxiliar:string;
+    cadeia_auxiliar: string;
     rating: string;
     reviews: string;
     in_best_district_booking: string;
@@ -21,17 +21,22 @@ type GetHotelsResponse = {
   pagination: {
     total: number;
     limit: number;
-    offset:number;
+    offset: number;
     hasMore: boolean;
   };
 }
 type StarRating = {
-    rating: number;
-    max?: number;
-    size?: number;
-    className?: string;
+  rating: number;
+  max?: number;
+  size?: number;
+  className?: string;
 };
 
 type GetHotelsQuery = {
   offset?: string | null;
+  name?: string | null;
+  city?: string | null;
+  country?: string | null;
+  rating?: string | null;
+
 }
