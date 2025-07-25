@@ -38,5 +38,34 @@ type GetHotelsQuery = {
   city?: string | null;
   country?: string | null;
   rating?: string | null;
-
 }
+type GetHotelDetailResponse = {
+  data: {
+    place_id: string;
+    nome_hotel_auxiliar: string;
+    endereco_logradouro_auxiliar: string;
+    endereco_bairro_auxiliar: string;
+    municipio_fornecedor_auxiliar: string;
+    endereco_completo_auxiliar: string;
+    pais_fornecedor_auxiliar: string;
+    telefone_fornecedor_auxiliar: string;
+    cep_fornecedor_auxiliar: string;
+    latitude_fornecedor_auxiliar: string;
+    longitude_fornecedor_auxiliar: string;
+    cadeia_auxiliar: string;
+    bookingUrl: string;
+    rating: string;
+    rating_conforto: string;
+    rating_limpeza: string;
+    rating_localizacao: string;
+    reviews: string;
+    in_best_district_booking: string;
+    cnpj: string;
+    pointOfInterests: string;
+    Estrelas: string;
+    AddedDate: string;
+    Website: string;
+  }
+  success: boolean;
+}
+

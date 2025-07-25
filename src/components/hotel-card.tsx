@@ -34,18 +34,18 @@ export function HotelCard({ hotel }: HotelCard) {
             <div className="flex gap-2"> <span className="max-w-full text-left ">
               País:
             </span>
-              <Badge variant="secondary" className="self-start">
+              <Badge variant="secondary" className="self-start text-sm">
                 {hotel.pais_fornecedor_auxiliar}
               </Badge>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              <Badge variant="secondary" className="self-start">
+              <Badge variant="secondary" className="self-start text-sm">
                 {hotel.municipio_fornecedor_auxiliar}
               </Badge>
             </div>
             <span className="max-w-full text-left">
-              Avaliações:  <Badge variant="secondary" className="self-start">
+              Avaliações:  <Badge variant="secondary" className="self-start text-sm">
                 {hotel.rating}
               </Badge>
             </span>
