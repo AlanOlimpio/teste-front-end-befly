@@ -1,69 +1,84 @@
-# React + TypeScript + Vite
+# Teste técnico: desenvolvedor front-end Befly
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## React + TypeScript + Vite + Tailwind
 
-Currently, two official plugins are available:
+## Funcionalidades Obrigatórias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Página de Login
 
-## Expanding the ESLint configuration
+- Formulário com campos nome de usuário e senha
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Validação de campos obrigatórios
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Tratamento de erros de autenticação
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Redirecionamento automático após login bem sucedido
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Persistência do token JWT para as rotas protegidas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Página de Listagem de Hotéis
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Lista de hotéis paginada
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Filtros (opcionais):
+
+- Nome do hotel
+
+- Cidade
+
+- País
+
+- Classificação mínima
+
+- Paginação com controles de navegação (limite/offset)
+
+- Cards/lista responsiva com informações principais
+
+- Link para a página de detalhes
+- Tenha liberdade para incrementar componentes e recursos que você considera relevantes
+
+### 3. Página de Detalhes do Hotel
+
+- Exibição completa das informações do hotel
+
+- Layout responsivo e bem estruturado
+
+- Botão de voltar para a listagem
+
+- Tenha liberdade para incrementar componentes e recursos que você considera relevantes
+  
+
+# Print Screen
+
+|Login|List|Detail|
+|-------|------|------|
+|<img src="screencapture-login.gif" alt="Login" width="100%">|<img src="screencapture-list.gif" alt="List" width="100%">|<img src="screencapture-detail.gif" alt="Detail" width="100%">|
+
+Link temp:
+
+
+## ✔️ Lista das bibliotecas utilizadas no desenvolvimento:
+
+- `react`
+- `react-dom`
+- `react-router-dom`
+- `vite`
+- `TypeScript`
+- `tailwindcss`
+- `react-hook-form`
+- `@hookform/resolvers`
+- `zod`
+- `@tanstack/react-query`
+- `axios`
+- `shadcn`
+- `leaflet`
+- `react-leaflet`
+
+# 🛠️ Abrir e rodar o projeto
+
+## Requisitos
+
+- Node.js >= 18
+
+
+Dentro da pasta do projeto execute `npm i` ou `yarn` para instalar as dependências e `npm run dev` ou `yarn dev` para iniciar o projeto.
