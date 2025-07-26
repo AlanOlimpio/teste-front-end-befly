@@ -22,7 +22,7 @@ export function Mapa({
         <MapContainer
             ref={mapRef}
             center={[latitude, longitude]}
-            zoom={8}
+            zoom={17}
             className="w-full h-[300px]"
             scrollWheelZoom={true}
         >
@@ -40,7 +40,7 @@ export function Mapa({
             </Marker>
             {latitude && longitude && (
                 <Button
-                    onClick={() => mapRef.current?.setView([latitude, longitude], 8)}
+                    onClick={() => mapRef.current?.setView([latitude, longitude], 17)}
                     variant="secondary" size="sm"
                     className="absolute bottom-6 right-4 z-[9999] cursor-pointer"
                 >
