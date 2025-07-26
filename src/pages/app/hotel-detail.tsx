@@ -15,6 +15,13 @@ export function HotelDetail() {
     const navigate = useNavigate();
     const mapRef = useRef<L.Map | null>(null);
 
+    function goToBack() {
+        if (window.history.length > 2) {
+            navigate(-1);
+        } else {
+            navigate('/');
+        }
+    }
     const { data: hotel } = useQuery({
         queryKey: ["HotelDetail", place_id],
         queryFn: () => getHotelDetails(place_id!),
@@ -27,7 +34,7 @@ export function HotelDetail() {
         <>
             <div className='flex gap-4 flex-wrap justify-between items-center px-8 max-sm:px-5'>
                 <h1 className="text-2xl font-bold tracking-tight ">Detalhes do Hotel</h1>
-                <Button variant="secondary" size="sm" className="cursor-pointer" onClick={() => navigate(-1)}>
+                <Button variant="secondary" size="sm" className="cursor-pointer" onClick={() => goToBack()}>
                     <ArrowLeft />
                     Voltar
                 </Button>
