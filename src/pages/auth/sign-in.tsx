@@ -50,9 +50,11 @@ export function SignIn() {
 
   const watchFields = watch(["identifier", "password"])
 
-  if (isAuthenticated) {
-    navigate(from, { replace: true });
-  }
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate(from, { replace: true });
+    }
+  }, [isAuthenticated, navigate, from]);
 
   const { mutateAsync: authenticate } = useMutation({
     mutationFn: async ({ username, password }: { username: string; password: string }) => {
@@ -171,7 +173,8 @@ export function SignIn() {
           <div>
             <Button
               type="submit"
-              className="flex w-full justify-center bg-primary text-gray-900 shadow-xs hover:bg-primary/90 cursor-pointer"
+              variant="secondary"
+              className="flex w-full justify-center cursor-pointer"
               disabled={isSubmitting}
             >
               Entrar
