@@ -1,6 +1,7 @@
 import {
     ChevronLeft,
     ChevronRight,
+    ChevronsLeft,
     ChevronsRight,
 } from "lucide-react";
 
@@ -35,7 +36,7 @@ export function Pagination({
                         className="h-8 w-8 p-0 cursor-pointer"
                         disabled={pageIndex === 0}
                     >
-                        <ChevronLeft className="h-4 w-4" />
+                        <ChevronsLeft className="h-4 w-4" />
                         <span className="sr-only">Primeira página</span>
                     </Button>
                     <Button

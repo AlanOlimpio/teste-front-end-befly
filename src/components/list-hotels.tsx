@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
 import { z } from "zod";
 import { HotelsListFilters } from "@/components/hotel-list-filters";
+import { CardSkeleton } from "./card-skeleton";
 
 
 export function ListHotels() {
@@ -21,7 +22,7 @@ export function ListHotels() {
         .parse(searchParams.get("page") ?? "1");
 
 
-    const { data: result } = useQuery({
+    const { data: result, isLoading: isLoadingResult } = useQuery({
         queryKey: ["ListHotels", pageIndex, name, city, country, rating],
         queryFn: () => getHotels({
             offset: pageIndex.toString(),
@@ -49,6 +50,7 @@ export function ListHotels() {
                             result.data.map((hotel) => {
                                 return <HotelCard key={hotel.place_id} hotel={hotel} />;
                             })}
+                        {isLoadingResult && <CardSkeleton />}
                     </div>
                 </div>
 
