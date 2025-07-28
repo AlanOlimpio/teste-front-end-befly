@@ -2,7 +2,7 @@
 
 ## React + TypeScript + Vite + Tailwind
 
-## Funcionalidades Obrigatórias
+## 🔨 Funcionalidades Obrigatórias
 
 ### 1. Página de Login
 
@@ -54,7 +54,8 @@
 |-------|------|------|
 |<img src="screencapture-login.gif" alt="Login" width="100%">|<img src="screencapture-list.gif" alt="List" width="100%">|<img src="screencapture-detail.gif" alt="Detail" width="100%">|
 
-Link temp:
+## Link temp:
+<a href="https://teste-front-end-befly.vercel.app/" target="_blank">https://teste-front-end-befly.vercel.app/</a>
 
 
 ## ✔️ Lista das bibliotecas utilizadas no desenvolvimento:
@@ -76,9 +77,15 @@ Link temp:
 
 # 🛠️ Abrir e rodar o projeto
 
-## Requisitos
+### Requisitos
 
 - Node.js >= 18
+
+### Necessário criar .env.local
+
+```bash
+VITE_API_URL=""
+```
 
 
 Dentro da pasta do projeto execute `npm i` ou `yarn` para instalar as dependências e `npm run dev` ou `yarn dev` para iniciar o projeto.
