@@ -41,6 +41,7 @@ export function SignIn() {
     formState: { isSubmitting, errors },
   } = useForm<SignInForm>({
     resolver: zodResolver(signInform),
+    mode: "onBlur",
   });
 
   const navigate = useNavigate();
