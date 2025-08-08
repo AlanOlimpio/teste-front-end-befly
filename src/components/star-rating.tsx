@@ -10,7 +10,7 @@ export const StarRating = ({ rating, max = 5, size = 20, className = "" }: StarR
                 const bgFill = i < rating ? '#FFFF00' : 'transparent';
                 const colorFill = theme !== 'dark' ? '#000000' : '#dadada';
 
-                return <Star key={i} size={size} fill={bgFill} color={colorFill} strokeWidth={1} />;
+                return <Star data-testid="star-rating" key={i} size={size} fill={bgFill} color={colorFill} strokeWidth={1} />;
             })}
         </div>
     );
