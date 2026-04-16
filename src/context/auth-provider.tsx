@@ -1,4 +1,4 @@
-import { setupInterceptors } from "@/lib/axios";
+import axiosPrivate from "@/lib/axios";
 import { createContext, useEffect, useState } from "react";
 
 
@@ -33,16 +33,28 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     useEffect(() => {
-        const getToken = async () => {
-            const storedToken = await localStorage.getItem(accessTokenTeste)
-            if (storedToken) {
-                setAuthToken(storedToken)
-            }
-            setupInterceptors(logout)
-            setIsLoading(false);
-        }
-        getToken()
+  const storedToken = localStorage.getItem(accessTokenTeste)
 
+  if (storedToken) {
+    setAuthToken(storedToken)
+  }
+
+    const interceptor = axiosPrivate.interceptors.response.use(
+    res => res,
+    err => {
+        const status = err.response?.status
+        if (status === 401 || status === 403) {
+        logout()
+        }
+        return Promise.reject(err)
+    }
+    )
+
+    setIsLoading(false)
+
+    return () => {
+    axiosPrivate.interceptors.response.eject(interceptor)
+    }
     }, [])
 
 
